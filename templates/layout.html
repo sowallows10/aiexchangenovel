@@ -1,46 +1,32 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<!DOCTYPE html><!-- このファイルがHTMLであることを宣言 -->
+<html lang="ja"><!-- 言語は日本語に設定 -->
+
 <head>
     <meta charset="utf-8">
-    <!-- cssファイルの読み込み -->
-    <link rel=stylesheet href="../static/css/style.css">
-    <!-- ファビコンの設定 -->
-    <link rel="icon" href="../static/images/favicon.ico">
-
-    <title>台形面積ツール</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"> <!-- cssファイルの読み込み -->
+    <!--link rel="icon" href="../static/images/favicon.ico">< ファビコンの設定 -->
+    <title>AI Exchange Novel</title>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <a href='問題'>台形面積ツール</a>
+            <a href="/">AI Exchange Novel</a>
         </div>
 
         <nav class="menu">
             <ul>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICES</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <a href="#" >共有サイトへ！</a>
             </ul>
         </nav>
     </header>
-<!-- templateの継承部分 -->
+
     {% block content %}
     {% endblock %}
-<!-------------------->
+
+
     <footer>
-        <div class="footer_logo">©︎ GeekSalon_AI_html_cssゼミ</div>
+        <div class="footer_logo">©︎ 2023 Soichiro Uchima</div>
     </footer>
 </body>
 </html>

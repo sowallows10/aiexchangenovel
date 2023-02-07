@@ -1,21 +1,19 @@
-from flask import Flask
+import os
+from flask import (
+     Flask, 
+     request, 
+     render_template)
 
-app = Flask(__name__) #アンダースコア(_)をnameの左右にそれぞれ2つずつ書く
+app = Flask(__name__,static_url_path='/static') #アンダースコア(_)をnameの左右にそれぞれ2つずつ書く
 
-@app.route('設定したいパス')
-def 関数名():
-    (処理の内容)
-    return "表示したい内容"
+@app.route('/')
+def top():
+    return  render_template('top.html')
 
-@app.route('設定したいパス')
-def 関数名():
-    (処理の内容)
-    return "表示したい内容"
+@app.route('/index')
+def index():
+    return  render_template('index.html')
 
-@app.route('設定したいパス')
-def 関数名():
-    (処理の内容)
-    return "表示したい内容"
 
 if __name__ == "__main__":
     app.run(debug=True)

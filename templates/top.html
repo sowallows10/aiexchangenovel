@@ -1,16 +1,35 @@
-#####(1)#####
+{% extends "layout.html" %}
 {% block content %}
-<main>
-    <h1 class="content_title">〜 HTML/CSSゼミ 〜</h1>
-    <div class="content">
-        <h1>台形の面積を計算してみよう</h1>
-        <p class="resizeimage">
-            <img src="../static/images/daikei.jpg" alt="台形" class="sample_image"/>
-        </p>
-        <div class="click_btn">
-            <a #####(2)#####>Click</a>
+    <br>
+    <section id="first-block">
+        <div class="title-container">
+          <h1>新しい、物語の価値を創ろう。</h1>
         </div>
-    </div>
-</main>
+      </section>
 
+    <main>
+        <div class="content">
+            <h2>ABOUT&遊び方</h2>
+            <h1>様々な文豪と「交換小説」を叶える！</h1>
+            <h4>~「文通」気分で好きなAI作家とオリジナル物語を作ろう♡~</h4>
+            <br>
+            <img src="/static/images/book.jpg" alt="book"/>  <!-- スライドショー用の画像を入れたい -->
+        </div>
+    </main>
+    
+    <div class="ichiran">
+        <h2>文通相手一覧</h2>
+        <br>
+        <p class="sakka">
+            <a href="/index"><img src="/static/images/dazai.jpg" alt="dazai" width="250" height="250" ></a>
+            <a href="/index"><img src="/static/images/natume.jpg" alt="natume" width="250" height="250" ></a>
+            <a href="/index"><img src="/static/images/akutagawa.jpg" alt="akutagawa" width="250" height="250" ></a>
+        </p>
+    </div>
+    
+
+    <br>
+    <br>
+    <br>
+    
 {% endblock %}

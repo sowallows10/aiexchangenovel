@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<main>
+    <br>
+    <br>
+    <br>
+    <h2 class="content_title">文通画面</h2>
+    <br>
+    <div class="content">
+
+        <p class="dear">
+            <h4>Dear</h4>
+            <input type=”text” name=”dear” size="50">
+        </p>
+
+        <br>
+
+        <p class="taitoru">
+            <h4>title</h4>
+            <input type=”text” name=”title” size="50">
+        </p>
+
+        <br>
+
+        <p class="honbun">
+            <h4>本文</h4>
+            <textarea name=”honbun” cols="50" rows="30"></textarea>
+        </p>
+
+        <div class="click_btn">
+            <a href="/index">バトンタッチ！</a>
+            <a href="/##">共有する！</a>
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}
