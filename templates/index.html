@@ -11,27 +11,33 @@
 
         <p class="dear">
             <h4>Dear</h4>
-            <input type=”text” name=”dear” size="50">
+            <input type=”text” name=”dear” size="60">
         </p>
 
         <br>
 
         <p class="taitoru">
-            <h4>title</h4>
-            <input type=”text” name=”title” size="50">
+            <h4>Title</h4>
+            <input type=”text” name=”title” size="60">
         </p>
 
         <br>
 
-        <p class="honbun">
+        <form action="/syori" method="post" >
             <h4>本文</h4>
-            <textarea name=”honbun” cols="50" rows="30"></textarea>
-        </p>
+            <textarea name="honbun" cols="60" rows="30"></textarea>
+        
+        
+            <h5>※共有ボタンを押す前に、本文のコピーをお願いします！</h5>
+            <br>
 
-        <div class="click_btn">
-            <a href="/index">バトンタッチ！</a>
-            <a href="/##">共有する！</a>
-        </div>
+            <div class="click_btn">
+                <input type="submit" value="バトンタッチ！">
+                <button href="/##">共有する！</button>
+            </div>
+        </form>
+        <br>
+        <br>
 
     </div>
 </main>

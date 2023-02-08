@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +26,7 @@
   }
   
   .logo {
+    font-style: italic;
     font-size: 20px;
     color:#000b00;
     
@@ -64,7 +66,7 @@
     background-image: url("/static/images/book1.jpg");
     background-size: cover;
     width: 100%;
-    height: 480px;
+    height: 400px;
   
     display: flex;
     justify-content: center;
@@ -164,6 +166,11 @@
   }
   
   /* 「click」ボタンのスタイル */
+
+  button{
+    display:inline-block;
+    }
+
   #click_btn {
     text-align: center;
     margin: 10px auto;
@@ -235,4 +242,5 @@
   .footer_logo {
     line-height: 50px;
     color:#000b00;
+    font-size:17px;
   }
