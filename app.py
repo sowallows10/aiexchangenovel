@@ -11,8 +11,8 @@ app = Flask(__name__,static_url_path='/static') #アンダースコア(_)をname
 def top():
     return  render_template('top.html')
 
-@app.route('/index', methods=['GET', 'POST'])
-def index():
+@app.route('/index/<sakka>', methods=['GET', 'POST'])
+def index(sakka):
     #honbun = request.form["honbun"]
     #print(honbun)
     #generate(honbun, 'dazai_finetune', 100)
@@ -20,15 +20,17 @@ def index():
     if request.method == "GET":
         with open('gen.txt', 'r+' ,encoding='utf-8') as f:
             f.truncate(0)
-        return render_template('index.html')
+        return render_template('index.html', sakka = sakka)
     elif request.method == "POST":
         textdata = request.form.get("honbun")
-        print(textdata)
+        with open('gen.txt', 'w' ,encoding='utf-8') as f:
+            f.write(textdata)
+            print(textdata)
         generate(textdata, 'dazai_finetune', 100)
-        f = open('gen.txt', 'r+' ,encoding='utf-8')
-        novel = f.read()
-        gassaku= textdata + novel
-        return render_template('index.html', gassaku = gassaku)
+        with open('gen.txt', 'r+' ,encoding='utf-8') as f:
+            novel = f.read()
+            #gassaku= textdata + novel
+        return render_template('index.html', gassaku = novel, sakka = sakka)
 
 # @app.route('/syori', methods=['GET', 'POST'])
 # def syori():
