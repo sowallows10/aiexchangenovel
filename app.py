@@ -11,16 +11,31 @@ app = Flask(__name__,static_url_path='/static') #アンダースコア(_)をname
 def top():
     return  render_template('top.html')
 
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 def index():
-    return  render_template('index.html')
+    #honbun = request.form["honbun"]
+    #print(honbun)
+    #generate(honbun, 'dazai_finetune', 100)
 
-@app.route('/syori', methods=['GET', 'POST'])
-def syori():
-    honbun = request.form["honbun"]
-    print(honbun)
-    generate(honbun, model)
-    return  render_template('index.html')
+    if request.method == "GET":
+        with open('gen.txt', 'r+' ,encoding='utf-8') as f:
+            f.truncate(0)
+        return render_template('index.html')
+    elif request.method == "POST":
+        textdata = request.form.get("honbun")
+        print(textdata)
+        generate(textdata, 'dazai_finetune', 100)
+        f = open('gen.txt', 'r+' ,encoding='utf-8')
+        novel = f.read()
+        gassaku= textdata + novel
+        return render_template('index.html', gassaku = gassaku)
+
+# @app.route('/syori', methods=['GET', 'POST'])
+# def syori():
+#     honbun = request.form["honbun"]
+#     print(honbun)
+#     generate(honbun, 'dazai_finetune')
+#     return  render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

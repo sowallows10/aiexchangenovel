@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +7,7 @@
     margin: 0;
     font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     color:#595959;
-    background-color:antiquewhite;
+    background-color:#fff1cf;
   }
   
   /* *********************************
@@ -66,7 +65,7 @@
     background-image: url("/static/images/book1.jpg");
     background-size: cover;
     width: 100%;
-    height: 400px;
+    height: 380px;
   
     display: flex;
     justify-content: center;
@@ -91,10 +90,8 @@
   }
 
   .sakka {
-    display: flex;
-    width: 65%;
-    margin: auto;
-    text-decoration: underline solid black
+    display: inline-block;
+    text-align: center;
   }
   
   /* *********************************　
@@ -128,42 +125,52 @@
   .content h1 {
     padding: 0.5em 0;/* 上下の余白 */
   }
-  
-  #daikei_image {
-    width: 70%;
-    padding: 0px 80px;
-    background: antiquewhite
+
+  .slider {
+    width: 750px;
+    height: 420px;
+    overflow: hidden;
+    margin: 0 auto;
   }
+  
+  .slider-item {
+    width: 750px;
+    float: left;
+  }
+  
+  img{
+    width:100%;
+  }
+  
+  .slider-inner {
+    width: 500%;
+    animation: slider 50s infinite ease;
+  }
+  
+  @keyframes slider {
+      8% {
+      transform: translateX(0);
+      }
+      30% {
+      transform: translateX(-750px);
+      }
+      52% {
+      transform: translateX(-1500px);
+      }
+      74% {
+      transform: translateX(-2250px);
+      }
+      96% {
+      transform: translateX(-3000px);
+      }
+      100% {
+      transform: translateX(0);
+      }
+  }
+  
+  
   
   /* 表（数値を入力する部分）の設定 */
-  table{
-    width: 100%;
-    border-spacing: 0px 5px;
-  }
-  
-  th {
-    width: 30%;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    text-align: center;
-    padding: 10px;
-    background-color: rgba(115, 210, 230);
-  }
-  
-  td{
-    width: 70%;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(213, 246, 253);
-    border: 2px solid rgba(115, 210, 230);
-  }
-  
-  .input_field [type="number"]{
-    border: none;
-    outline: none;
-  }
   
   /* 「click」ボタンのスタイル */
 
@@ -187,60 +194,23 @@
   }
   
   /* 「計算する」ボタンのスタイル */
-  #calc_btn [type="submit"]{
-      cursor:pointer;
-    text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      width: 100px;
-      padding: 4px 10px;
-      margin-top: 10px;
-      color:#fff;
-    background: rgb(246, 123, 123);
-    border: none;
-      border-radius: 5px;
-  }
   
-  #calc_btn [type="submit"]:hover {
-      background: rgb(250, 90, 90);
-  }
   
   /* 結果を表示する部分 */
-  .box {
-    margin: 50px auto;
-    position: relative;
-    width:50%;
-    border: 1px solid #595959;
-  }
   
-  .box_title {
-    position: absolute;
-    top: -0.8em;
-    left: 20px;
-    font-weight: bold;
-    font-size: 1.2em;
-    padding: 0 0.5em;
-    background-color: antiquewhite;
-  }
-  
-  #result {
-    font-weight: bold;
-    color: rgb(246, 123, 123);
-    font-size:24px;
-  }
   
   /* *********************************　
   footerの設定
   *********************************** */
   footer {
     width: 100%; /* 幅いっぱいを指定 */
-    height: 50px; /* 高さを指定 */
+    height: 45px; /* 高さを指定 */
     background: #5b7e91; /* 背景色を指定 */
     text-align: center;
   }
   
   .footer_logo {
-    line-height: 50px;
+    line-height: 45px;
     color:#000b00;
     font-size:17px;
   }

@@ -100,7 +100,7 @@ def generate_one(sess, output, context, first_text, length):
 #     config.gpu_options.allow_growth = True
 #     config.gpu_options.visible_device_list = int(0)
 
-def generate(first_text, model, min_length=100):
+def generate(first_text, model, min_length):
 
     output_file = "gen.txt"
     num_generate = 1
@@ -126,7 +126,7 @@ def generate(first_text, model, min_length=100):
         saver.restore(sess, ckpt)
 
         if len(output_file) > 0:
-            with open(output_file, 'w', encoding='utf-8') as of:
+            with open(output_file, 'a', encoding='utf-8') as of:
                 for i in range(num_generate):
                     of.write(generate_one(sess, output, context, first_text, length)+'\n')
                     if i < num_generate-1:
