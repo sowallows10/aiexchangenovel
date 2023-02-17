@@ -5,7 +5,7 @@ from flask import (
      render_template)
 
 from generate import generate
-app = Flask(__name__,static_url_path='/static') #アンダースコア(_)をnameの左右にそれぞれ2つずつ書く
+app = Flask(__name__, static_url_path='/static') #アンダースコア(_)をnameの左右にそれぞれ2つずつ書く
 
 @app.route('/')
 def top():
