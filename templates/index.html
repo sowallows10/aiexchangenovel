@@ -4,6 +4,7 @@
     <div id="splash_text"></div>
 </div> -->
 <main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <br>
     <br>
     <br>
@@ -24,17 +25,18 @@
         </p>
 
         <br>
+        
 
         <form action="/index/{{sakka}}" method="POST" >
             <h4>本文</h4>
             <textarea name="honbun" cols="60" rows="30">{{gassaku}}</textarea>
-            <h5>※AI作家が文章を作るのに1分ほどかかることもあります </h5>
+            <h5>※1ターンの文章作成に約1分かかります。</h5>
             <h5>※共有ボタンを押す前に、本文のコピーをお願いします！</h5>
             <br>
   
             <div class="click_btn">
-                <input type="submit" value="バトンタッチ！">
-                <button href="/##">共有する！</button>
+                <input type="submit"  id="click_btn" value="バトンタッチ！">
+                <!-- <button href="/##">共有する！</button> -->
             </div>
         </form>
         <br>

@@ -1,5 +1,6 @@
 <!DOCTYPE html><!-- このファイルがHTMLであることを宣言 -->
-<html lang="ja"><!-- 言語は日本語に設定 -->
+<html lang="ja">
+<!-- 言語は日本語に設定 -->
 
 <head>
     <meta charset="utf-8">
@@ -14,33 +15,34 @@
 </head>
 
 <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
     <script>
-    $(function() {
-    var h = $(window).height();
+        $(function () {
+            var h = $(window).height();
 
-    
-    $('#wrap').css('display','none');
-    $('#loader-bg ,#loader').height(h).css('display','block');
-    });
 
-    // $("click_btn").submit(function () { //全ての読み込みが完了したら実行
-    // $('#loader-bg').delay(900).fadeOut(800);
-    // $('#loader').delay(600).fadeOut(300);
-    // $('#wrap').css('display', 'block');
-    // });
+            $('#wrap').css('display', 'none');
+            $('#loader-bg ,#loader').height(h).css('display', 'block');
 
-    $(window).load(function () { //全ての読み込みが完了したら実行
-    $('#loader-bg').delay(900).fadeOut(800);
-    $('#loader').delay(600).fadeOut(300);
-    $('#wrap').css('display', 'block');
-    });
+
+            $('#click_btn').on('click', function () { //全ての読み込みが完了したら実行
+                $('#wrap').css('display','none');
+                $('#loader-bg ,#loader').height(h).css('display','block');
+            });
+        });
+
+
+        $(window).load(function () { //全ての読み込みが完了したら実行
+            $('#loader-bg').delay(900).fadeOut(800);
+            $('#loader').delay(600).fadeOut(300);
+            $('#wrap').css('display', 'block');
+        });
     </script>
     <div id="loader-bg">
-      <div id="loader">
-        <!-- <img src="images/loading-l-5.gif" width="80" height="80" alt="Now Loading..." > -->
-        <p>Now Loading...</p>
-      </div>
+        <div id="loader">
+            <!-- <img src="static/images/loading01.gif" width="1" height="100" alt="Now Loading..." > -->
+            <p>Now Loading...</p>
+        </div>
     </div>
     <!-- <div id="splash">
         <div id="splash_text"></div>
@@ -53,8 +55,8 @@
 
             <nav class="menu">
                 <ul>
-                    <a href="/" >TOPページへ！</a>
-                    <a href=" https://ballparkfood.herokuapp.com/" >共有サイトへ！</a>
+                    <a href="/">TOPページへ！</a>
+                    <a href=" https://ballparkfood.herokuapp.com/">共有サイトへ！</a>
                 </ul>
             </nav>
         </header>
@@ -72,4 +74,5 @@
         <!-- <script src="static/javascript.js"></script> -->
     </div>
 </body>
+
 </html>
