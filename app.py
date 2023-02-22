@@ -6,6 +6,7 @@ from flask import (
 
 from generate import generate
 app = Flask(__name__, static_url_path='/static') #アンダースコア(_)をnameの左右にそれぞれ2つずつ書く
+sakka_doc = {'太宰治':'dazai_finetune_500','芥川龍之介':'ryuunosuke'}
 
 @app.route('/')
 def top():
@@ -26,7 +27,7 @@ def index(sakka):
         with open('gen.txt', 'w' ,encoding='utf-8') as f:
             f.write(textdata)
             print(textdata)
-        generate(textdata, 'dazai_finetune_500', 100)
+        generate(textdata, sakka_doc[sakka] , 100)
         with open('gen.txt', 'r+' ,encoding='utf-8') as f:
             novel = f.read()
             #gassaku= textdata + novel
