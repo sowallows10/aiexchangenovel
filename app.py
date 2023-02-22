@@ -26,7 +26,7 @@ def index(sakka):
         with open('gen.txt', 'w' ,encoding='utf-8') as f:
             f.write(textdata)
             print(textdata)
-        generate(textdata, 'dazai_finetune', 100)
+        generate(textdata, 'dazai_finetune_500', 100)
         with open('gen.txt', 'r+' ,encoding='utf-8') as f:
             novel = f.read()
             #gassaku= textdata + novel

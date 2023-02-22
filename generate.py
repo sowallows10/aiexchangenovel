@@ -138,4 +138,4 @@ def generate(first_text, model, min_length):
                     print('========')
 
 if __name__ == "__main__":
-    generate("", "dazai_finetune/dazai_finetune")
+    generate("", "dazai_finetune_500/dazai_finetune_500")
