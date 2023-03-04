@@ -3,4 +3,4 @@ flask==2.0.3
 tqdm==4.64.1
 numpy==1.19.5
 jaconv==0.3.3
-tensorflow-cpu==1.13.1
+tensorflow-cpu==1.15.0
